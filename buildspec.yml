@@ -1,0 +1,12 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Hello world
+  build:
+    commands:
+      - chmod +x qualiti_script.sh
+      - . ./qualiti_script.sh
+    finally:
+      - echo successfully execute
