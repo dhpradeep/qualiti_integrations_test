@@ -45,7 +45,7 @@ while : ; do
     echo "Exit app for taking too long time.";
     exit 1;
   fi
-   ((I=I+1))
+    I=$((I + 1))
     sleep 15;
 done
  
