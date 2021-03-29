@@ -1,6 +1,6 @@
 #!/bin/bash
  
-set -ex
+# set -ex
  
 PROJECT_ID='332'
 API_KEY='xlTTBvkv6V2noPxP3qoej23Id6k9Ldpba3oPezD6'
@@ -24,12 +24,14 @@ echo "$TEST_RUN_ID";
  
 AUTHORIZATION_TOKEN="$( \
   curl -X POST -G ${API_URL}/auth/token \
-  -H 'x-api-key='${API_KEY}'' \
-  -H 'client_id= '${CLIENT_ID}'' \
-  -H 'scopes= '${SCOPES}'' \
+  -H 'x-api-key: '${API_KEY}'' \
+  -H 'client_id: '${CLIENT_ID}'' \
+  -H 'scopes: '${SCOPES}'' \
   | jq -r '.token')"
  
 # Wait until the test run has finished
+TOTAL_ITERATION=3
+I=1
 while : ; do
    RESULT="$( \
    curl -X GET ${API_URL}/automation-history?project_id=${PROJECT_ID}\&test_run_id=${TEST_RUN_ID} \
@@ -39,6 +41,11 @@ while : ; do
   if [ "$RESULT" != null ]; then
     break;
   fi
+   if [[ "$I" -gt "$ITERATION" ]]; then
+    echo "Exit app for taking too long time.";
+    exit 1;
+  fi
+   ((I=I+1))
     sleep 15;
 done
  
