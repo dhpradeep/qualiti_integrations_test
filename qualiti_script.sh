@@ -30,7 +30,7 @@ AUTHORIZATION_TOKEN="$( \
   | jq -r '.token')"
  
 # Wait until the test run has finished
-TOTAL_ITERATION=3
+TOTAL_ITERATION=200
 I=1
 while : ; do
    RESULT="$( \
