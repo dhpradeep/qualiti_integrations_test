@@ -1,6 +1,6 @@
 #!/bin/bash
  
-# set -ex
+set -ex
  
 PROJECT_ID='332'
 API_KEY='xlTTBvkv6V2noPxP3qoej23Id6k9Ldpba3oPezD6'
