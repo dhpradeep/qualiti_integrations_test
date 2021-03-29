@@ -41,7 +41,7 @@ while : ; do
   if [ "$RESULT" != null ]; then
     break;
   fi
-   if [[ "$I" -gt "$ITERATION" ]]; then
+   if [[ "$I" -gt "$TOTAL_ITERATION" ]]; then
     echo "Exit app for taking too long time.";
     exit 1;
   fi
