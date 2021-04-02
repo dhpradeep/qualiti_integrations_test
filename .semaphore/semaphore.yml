@@ -5,12 +5,15 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: 'Block #1'
+  - name: Qualiti Integrations Pipeline
     task:
       jobs:
-        - name: 'Job #1'
+        - name: Checkout to code
           commands:
             - checkout
+        - name: Give Permission to sh file
+          commands:
             - chmod +x qualiti_script.sh
+        - name: Execute Qualiti Script
+          commands:
             - . ./qualiti_script.sh
-            - ls
