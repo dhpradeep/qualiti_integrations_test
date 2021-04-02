@@ -16,4 +16,4 @@ blocks:
       jobs:
         - name: 'Job #1'
           commands:
-            - chomod +x qualiti_script.sh
+            - chmod +x qualiti_script.sh
