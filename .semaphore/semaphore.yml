@@ -11,6 +11,6 @@ blocks:
         - name: 'Job #1'
           commands:
             - checkout
-            - ls
             - chmod +x qualiti_script.sh
             - . ./qualiti_script.sh
+            - ls
