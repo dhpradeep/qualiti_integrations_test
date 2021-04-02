@@ -1,6 +1,6 @@
 #!/bin/bash
  
-set -ex
+# set -ex
  
 PROJECT_ID='332'
 API_KEY='xlTTBvkv6V2noPxP3qoej23Id6k9Ldpba3oPezD6'
@@ -20,7 +20,7 @@ TEST_RUN_ID="$( \
     -d 'triggerType=Deploy'\
   | jq -r '.test_run_id')"
   
-echo "$TEST_RUN_ID";
+echo "Test run id: $TEST_RUN_ID";
  
 AUTHORIZATION_TOKEN="$( \
   curl -X POST -G ${API_URL}/auth/token \
